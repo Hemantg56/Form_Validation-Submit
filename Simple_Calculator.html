@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Simple Calculator</title>
+</head>
+
+<body>
+
+    <label for="NO-1">Nom 1:-</label>
+    <input type="text" name="no-1" id="nm1">
+    <br><br>
+
+    <label for="no-2">Nom-2</label>
+    <input type="text" name="no-2" id="nm2">
+    <br><br>
+
+    <button onclick="valid()">+</button>
+    <button onclick="min()">-</button>
+    <button onclick="mal()">*</button>
+    <button onclick="div()">/</button>
+    <button onclick="mol()">%</button>
+
+
+    <h1 id="res"></h1>
+
+    <!-- puls karvu hoy to be input na value ne + karvu pade -->
+    <!-- input ma to typeof to string hoy 6 -->
+    <!-- ene pachi number ma convert karvanu -->
+    <!-- jya aapde value ne + karavanu hoy ena pahela Number(varname) -->
+    <!-- expale:- -->
+
+    <!-- Number vagar nu -->
+    <!-- n1.value='12'; -->
+    <!-- n2.value='12'; -->
+
+    <!-- re.innerHTML = n1.value + n2.value; -->
+    <!-- aanu javab aavse  -->
+    <!-- 1212 -->
+
+    <!-- n1.value='12'; -->
+    <!-- n2.value='12'; -->
+
+    <!-- re.innerHTML = Number(n1.value) + Number(n2.value); -->
+    <!-- aanu javab aavse  -->
+    <!-- 24 -->
+
+
+    <script>
+        n1 = document.getElementById('nm1')
+        n2 = document.getElementById('nm2')
+        re = document.getElementById('res')
+
+
+        function valid() {
+            console.log(n1)
+            console.log(n1.value)
+
+            // re.innerHTML = (n1.value) + (n2.value); == > String
+
+            // re.innerHTML = Number(n1.value) + Number(n2.value); // == > Number
+            re.innerHTML = parseInt(n1.value) + parseInt(n2.value); // == > Number
+
+        }
+
+        function min() {
+            re.innerHTML = Number(n1.value) - Number(n2.value)
+        }
+
+        function mal() {
+            re.innerHTML = Number(n1.value) * Number(n2.value)
+        }
+
+        function div() {
+            re.innerHTML = Number(n1.value) / Number(n2.value)
+        }
+
+        function mol() {
+            re.innerHTML = Number(n1.value) % Number(n2.value)
+        }
+    </script>
+
+</body>
+
+</html>

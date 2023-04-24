@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Form_Validated-Submit </title>
+</head>
+
+<body>
+
+    <form>
+        <label for="name">Name:- </label>
+        <input type="text" name="name" id="nm">
+        <br><br>
+
+        <label for="email"> Email:- </label>
+        <input type="email" name="email" id="em">
+        <br><br>
+
+        <label for="password">Password:- </label>
+        <input type="password" name="password" id="ps">
+        <br><br>
+
+        <label for="Confirm">Confirm Password:-</label>
+        <input type="password" name="Confirm" id="cps">
+        <br><br>
+
+        <label for="moblie">Moblie:- </label>
+        <input type="text" name="moblie" id="mb">
+        <br><br>
+
+        <input type="submit" id="su" onclick="valid()">
+    </form>
+
+    <script>
+        te = document.getElementById('nm')
+        em = document.getElementById('em')
+        pa = document.getElementById('ps')
+        cpa = document.getElementById('cps')
+        mo = document.getElementById('mb')
+
+        // submit na click par je alert rakhavanu hoy to if thi thay
+        // but condition value thi rakhay
+        // jemke -- if (varname.value == "")
+        // and if na under alert call karavo
+
+        // jyare aapde alert aape to enter kariye tyare ek na uper alert aave pan aane rokava mate
+        // ena mate alert na niche return false; 
+        // rakhvanu to alert jyare submit kariye end jena under khali ej alert call thay 
+
+        function valid() {
+            if (te.value == "") {
+                alert('Name is Requred...!')
+                return false;
+            }
+
+            if (em.value == "") {
+                alert('email is requred')
+                return false;
+
+            }
+
+            if (pa.value == "") {
+                alert('password is requred')
+                return false;
+            }
+
+            if (pa.value != cpa.vlaue) {
+                alert('password is not match')
+                return false;
+            }
+
+            if (mo.value == "") {
+                alert('moblie is requred')
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Form_Validated_Patten-Submit </title>
+</head>
+
+<body>
+
+    <form>
+        <label for="Name">Name:-</label>
+        <input type="text" name="Name" id="nm">
+        <br><br>
+
+        <label for="moblie">Moblie:-</label>
+        <input type="text" name="moblie" id="mb">
+        <br><br>
+
+        <input type="submit" name="submit" id="su" onclick="valid()">
+
+    </form>
+
+    <script>
+        n = document.getElementById('nm')
+
+        m = document.getElementById('mb')
+        s = document.getElementById('su')
+
+        // aa to operateros ma use thyi sake
+        // true = 0 aa thay
+        // false = 1 aa thay
+
+        // have aapde input na uder pattern nu use karisu but java thi
+        // java script ma pattern ne aapvannu hoy to /^$/
+        // expale: -
+        // /^$/
+        // aana vache html ma jevi rite perten aapiye em aapvanu
+        // /^[a-zA-Z]+$/ ==> Text mate 
+        // /^[0-9]+$/ ==> Number mate 
+
+        // min-max letter mate
+        // /^[a-zA-Z]{6,8}$/ ==> Text mate 
+        // /^[0-9]{10}$/ ==> Number mate 
+
+        // pattern ne call karava mate pahela ene var ma levu padse
+
+
+        nm_ex = /^[a-zA-Z]{5,7}$/;
+
+        mb_ex = /^[0-9]{10}$/;
+
+        // ane pan if ma call karvavu pade and aane conditions 
+        // if (varname.buldingmothed(input nu value))
+        // if (varname.test(input nu value))
+        // if (nm_pa.test(n.value)) {
+        //     code....!
+        // }
+
+        function valid() {
+            if (n.value == "") {
+                alert('Name is Requred...!')
+                return false;
+            }
+
+            if (!nm_ex.test(n.value)) {
+                alert('min-5 and max-7 Letters...!')
+                return false;
+            }
+
+            if (m.value == "") {
+                alert('Mobile is Requred...!')
+                return false;
+            }
+
+            if (!mb_ex.test(m.value)) {
+                alert('only 10 Numbers.....!')
+                return false;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
